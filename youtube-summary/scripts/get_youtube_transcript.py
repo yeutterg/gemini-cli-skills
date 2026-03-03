@@ -55,14 +55,30 @@ def main():
         
         # Return segments and full text
         segments = []
-        full_text = []
+        formatted_transcript = []
+        last_timestamp_check = -120 # Force first segment to have timestamp
+        
         for entry in data:
             segments.append({
                 "text": entry.text,
                 "start": entry.start,
                 "duration": entry.duration
             })
-            full_text.append(entry.text)
+            
+            # Format timestamp: HH:MM:SS or MM:SS
+            h = int(entry.start // 3600)
+            m = int((entry.start % 3600) // 60)
+            s = int(entry.start % 60)
+            ts = f"{h:02}:{m:02}:{s:02}" if h > 0 else f"{m:02}:{s:02}"
+            
+            text = entry.text.strip()
+            
+            # Add timestamp if it's a speaker change (>>) or if 2 minutes have passed
+            if text.startswith('>>') or (entry.start - last_timestamp_check >= 120):
+                formatted_transcript.append(f"\n[{ts}] {text}")
+                last_timestamp_check = entry.start
+            else:
+                formatted_transcript.append(text)
             
         print(json.dumps({
             "video_id": video_id,
@@ -70,7 +86,7 @@ def main():
             "description": description,
             "url": url,
             "segments": segments,
-            "full_text": " ".join(full_text)
+            "full_text": " ".join(formatted_transcript).strip()
         }))
     except Exception as e:
         print(json.dumps({"error": str(e)}))

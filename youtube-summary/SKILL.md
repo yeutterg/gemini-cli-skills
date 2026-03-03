@@ -36,19 +36,22 @@ This skill fetches transcripts from YouTube videos and creates a structured summ
 7. **Complete Transcript**:
    - At the very end of the note, add a `## Transcript` section.
    - Use a callout or fold if possible to keep it organized (e.g., `> [!abstract]- Transcript`).
-   - Paste the **entire** raw transcript text provided by the script here. This is crucial as the user specifically requested a complete transcript in the note.
+   - Paste the **entire** formatted transcript text provided by the script.
+   - **Speaker Attribution**: The script provides `>>` markers where speakers change. Use the context of the video (title, description, and content) to **identify and label the speakers**. Replace `>>` with the speaker's name (e.g., `[05:12] Andrew Huberman: ...`). If unsure, keep the `>>` or use `[05:12] Speaker: ...`.
+   - **Timestamps**: Ensure the `[MM:SS]` or `[HH:MM:SS]` timestamps from the script are preserved at the start of paragraphs.
 
 ## Style Guidelines
 - **No Spacing**: Do NOT put empty lines between headings, subheadings, or bullet points in the Outline or Key Takeaways. Continuous block of text.
-- **Transcript Format**: The Transcript section can have standard spacing for readability.
+- **Transcript Format**: The Transcript section should have paragraphs separated by speaker changes and timestamps for readability.
 - **Capitalization**: Capitalize the first letter of every bullet point.
-- **No Bold**: Do NOT use bold (`**`) anywhere (except for callout syntax).
+- **No Bold**: Do NOT use bold (`**`) anywhere (except for callout syntax or speaker labels in the transcript).
 - **Indentation**: Use TABS for nesting in the outline.
 - **Technical Depth**: Use 5-6 levels of nesting for the outline.
 - **Timestamp Format**: 
-	- Every bullet point must end with a timestamp link: `[TIMESTAMP](URL&t=SECONDS)`.
+	- Every bullet point in the **Outline** and **Key Takeaways** must end with a timestamp link: `[TIMESTAMP](URL&t=SECONDS)`.
+	- In the **Transcript** section, use the bracketed format: `[TIMESTAMP] Speaker Name: Text`.
 	- HH:MM:SS format for videos >1hr; MM:SS for <1hr.
-	- No outer parentheses or internal spaces around the link.
+	- No outer parentheses or internal spaces around the link in the Outline.
 
 ## Output Format Template
 ---

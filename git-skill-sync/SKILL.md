@@ -1,5 +1,5 @@
 ---
-name: skill-sync
+name: git-skill-sync
 description: Commits and pushes all skills in the .gemini/skills/ directory to the remote GitHub repository (https://github.com/yeutterg/gemini-cli-skills). Use this to keep the remote skills repository in sync with the local workspace.
 ---
 # Skill Sync
