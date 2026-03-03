@@ -27,18 +27,23 @@ This skill fetches transcripts from YouTube videos and creates a structured summ
    - Review the exhaustive outline.
    - Select only the 3-5 most impactful or surprising facts.
 6. **Format the Summary**:
-   - **Filename**: Use the video title (sanitized).
+   - **Filename**: Use the video title (sanitized). **IMPORTANT**: Decode any HTML entities in the title (e.g., convert `&amp;` to `&`).
    - **No H1 Heading**: Do NOT include a `# [Video Title]` heading.
    - **Front Matter**: 
      - `url`: The YouTube URL.
      - `speakers`: A YAML list of quoted backlinks (e.g., `  - "[[Name]]"`). Use verified spellings.
-   - **Order**: Key Takeaways immediately follow the front matter, then the Outline.
+   - **Order**: Key Takeaways immediately follow the front matter, then the Outline, and finally the complete Transcript.
+7. **Complete Transcript**:
+   - At the very end of the note, add a `## Transcript` section.
+   - Use a callout or fold if possible to keep it organized (e.g., `> [!abstract]- Transcript`).
+   - Paste the **entire** raw transcript text provided by the script here. This is crucial as the user specifically requested a complete transcript in the note.
 
 ## Style Guidelines
-- **No Spacing**: Do NOT put empty lines between headings, subheadings, or bullet points. Continuous block of text.
+- **No Spacing**: Do NOT put empty lines between headings, subheadings, or bullet points in the Outline or Key Takeaways. Continuous block of text.
+- **Transcript Format**: The Transcript section can have standard spacing for readability.
 - **Capitalization**: Capitalize the first letter of every bullet point.
-- **No Bold**: Do NOT use bold (`**`) anywhere.
-- **Indentation**: Use TABS for nesting.
+- **No Bold**: Do NOT use bold (`**`) anywhere (except for callout syntax).
+- **Indentation**: Use TABS for nesting in the outline.
 - **Technical Depth**: Use 5-6 levels of nesting for the outline.
 - **Timestamp Format**: 
 	- Every bullet point must end with a timestamp link: `[TIMESTAMP](URL&t=SECONDS)`.
@@ -62,3 +67,6 @@ speakers:
 			- Granular nuance [MM:SS](URL&t=SECONDS)
 				- Specific name/measurement [MM:SS](URL&t=SECONDS)
 					- Extra citation/detail [MM:SS](URL&t=SECONDS)
+## Transcript
+> [!abstract]- Transcript
+> [Full raw transcript text here]
