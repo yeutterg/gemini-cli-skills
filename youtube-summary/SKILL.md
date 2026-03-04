@@ -1,11 +1,11 @@
 ---
 name: youtube-summary
-description: Extracts and summarizes YouTube video transcripts into an Obsidian note. Creates a file in the root directory named after the video with front matter, key takeaways, and an extremely exhaustive, deeply nested outline.
+description: Extracts and summarizes YouTube video transcripts into an Obsidian note. Creates a file in the Research/ directory named after the video with front matter, key takeaways, and an extremely exhaustive, deeply nested outline.
 ---
 
 # YouTube Summary Skill
 
-This skill fetches transcripts from YouTube videos and creates a structured summary file directly in your Obsidian Vault's root directory.
+This skill fetches transcripts from YouTube videos and creates a structured summary file directly in your Obsidian Vault's Research/ directory.
 
 ## Workflow
 
@@ -27,7 +27,7 @@ This skill fetches transcripts from YouTube videos and creates a structured summ
    - Review the exhaustive outline.
    - Select only the 3-5 most impactful or surprising facts.
 6. **Format the Summary**:
-   - **Filename**: Use the video title (sanitized). **IMPORTANT**: Decode any HTML entities in the title (e.g., convert `&amp;` to `&`).
+   - **Filename**: Save to `Research/[Sanitized Video Title].md`. **IMPORTANT**: Decode any HTML entities in the title (e.g., convert `&amp;` to `&`).
    - **No H1 Heading**: Do NOT include a `# [Video Title]` heading.
    - **Front Matter**: 
      - `url`: The YouTube URL.

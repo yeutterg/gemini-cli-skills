@@ -1,11 +1,11 @@
 ---
 name: paper-summary
-description: Extracts and summarizes research papers into an Obsidian note. Creates a file in the root directory with metadata, backlinked authors, key takeaways, and an extremely exhaustive outline.
+description: Extracts and summarizes research papers into an Obsidian note. Creates a file in the Research/ directory with metadata, backlinked authors, key takeaways, and an extremely exhaustive outline.
 ---
 
 # Research Paper Summary Skill
 
-This skill fetches metadata and text from research papers (ArXiv, PDFs, or local files) and creates a structured summary in your Obsidian root directory.
+This skill fetches metadata and text from research papers (ArXiv, PDFs, or local files) and creates a structured summary in your Obsidian Research/ directory.
 
 ## Workflow
 
@@ -22,7 +22,7 @@ This skill fetches metadata and text from research papers (ArXiv, PDFs, or local
    - Select the 3-5 most impactful or surprising facts or contributions.
    - Place this section at the top, immediately after the front matter.
 5. **Format the Summary**:
-   - **Filename**: Use the full paper title in **Title Case** (sanitized).
+   - **Filename**: Save to `Research/[Sanitized Paper Title].md`. Use the full paper title in **Title Case**.
    - **H1 Heading**: Include a `# [Title]` heading in **Title Case** immediately after the front matter.
    - **Front Matter**: 
      - `url`: The source link.
