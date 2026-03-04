@@ -51,7 +51,6 @@ authors:
 year: [YYYY]
 contribution: [Key contribution]
 ---
-# [Paper Title in Title Case]
 ## Key Takeaways
 - Most surprising finding/fact
 - Impactful revelation
